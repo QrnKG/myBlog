@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://myblog.ink">
-  <title>测试我的新博客 | Qrn博客</title>
+  <title>一个叫车小程序的研究(百度智能小程序) 01 | Qrn博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="大家好这是新的博客测试">
-<meta name="keywords" content="测试">
+  <meta name="description" content="百度智能小程序来设计一款叫车软件关键点 ：长连接(WebSocket) 语音 地图标点 道路绘制 自定义车标 周围车辆  编译工具 3.52.2调试基础库 3.100.7  基本所需接口（暂定） 参考 《智能小程序》 文档 地址   语音识别 swan.ai.getVoiceRecognizer 【返回值：string】 用音频组件 swan.createInnerAudioContext 或者">
+<meta name="keywords" content="小程序 百度小程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试我的新博客">
-<meta property="og:url" content="http://myblog.ink/2019/08/21/测试我的新博客/index.html">
+<meta property="og:title" content="一个叫车小程序的研究(百度智能小程序) 01">
+<meta property="og:url" content="http://myblog.ink/2019/08/26/一个叫车小程序的研究/index.html">
 <meta property="og:site_name" content="Qrn博客">
-<meta property="og:description" content="大家好这是新的博客测试">
+<meta property="og:description" content="百度智能小程序来设计一款叫车软件关键点 ：长连接(WebSocket) 语音 地图标点 道路绘制 自定义车标 周围车辆  编译工具 3.52.2调试基础库 3.100.7  基本所需接口（暂定） 参考 《智能小程序》 文档 地址   语音识别 swan.ai.getVoiceRecognizer 【返回值：string】 用音频组件 swan.createInnerAudioContext 或者">
 <meta property="og:locale" content="cn">
-<meta property="og:updated_time" content="2019-08-23T07:07:58.686Z">
+<meta property="og:updated_time" content="2019-09-06T04:01:57.389Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="测试我的新博客">
-<meta name="twitter:description" content="大家好这是新的博客测试">
+<meta name="twitter:title" content="一个叫车小程序的研究(百度智能小程序) 01">
+<meta name="twitter:description" content="百度智能小程序来设计一款叫车软件关键点 ：长连接(WebSocket) 语音 地图标点 道路绘制 自定义车标 周围车辆  编译工具 3.52.2调试基础库 3.100.7  基本所需接口（暂定） 参考 《智能小程序》 文档 地址   语音识别 swan.ai.getVoiceRecognizer 【返回值：string】 用音频组件 swan.createInnerAudioContext 或者">
   
     <link rel="alternative" href="/atom.xml" title="Qrn博客" type="application/atom+xml">
   
@@ -159,27 +159,53 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-测试我的新博客" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-一个叫车小程序的研究" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      测试我的新博客
+      一个叫车小程序的研究(百度智能小程序) 01
     </h1>
   
 
         
-        <a href="/2019/08/21/测试我的新博客/" class="archive-article-date">
-  	<time datetime="2019-08-21T06:17:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
+        <a href="/2019/08/26/一个叫车小程序的研究/" class="archive-article-date">
+  	<time datetime="2019-08-26T06:42:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="大家好这是新的博客测试"><a href="#大家好这是新的博客测试" class="headerlink" title="大家好这是新的博客测试"></a>大家好这是新的博客测试</h1>
+        <h1 id="百度智能小程序来设计一款叫车软件"><a href="#百度智能小程序来设计一款叫车软件" class="headerlink" title="百度智能小程序来设计一款叫车软件"></a>百度智能小程序来设计一款叫车软件</h1><p><strong><em>关键点 ：长连接(WebSocket) 语音 地图标点 道路绘制 自定义车标 周围车辆</em></strong></p>
+<blockquote>
+<p>编译工具 3.52.2<br>调试基础库 3.100.7</p>
+</blockquote>
+<h2 id="基本所需接口（暂定）"><a href="#基本所需接口（暂定）" class="headerlink" title="基本所需接口（暂定）"></a>基本所需接口（暂定）</h2><blockquote>
+<p>参考 《智能小程序》 文档 <a href="https://smartprogram.baidu.com/docs/introduction/enter_application/" target="_blank" rel="noopener">地址</a></p>
+</blockquote>
+<ul>
+<li>语音识别 <a href="https://smartprogram.baidu.com/docs/develop/api/ai_voice/#swan-ai-getVoiceRecognizer/" target="_blank" rel="noopener">swan.ai.getVoiceRecognizer</a> 【返回值：string】<ul>
+<li>用音频组件 <a href="https://smartprogram.baidu.com/docs/develop/api/media_createinneraudiocontext/" target="_blank" rel="noopener">swan.createInnerAudioContext</a> 或者 背景音源管理播放 <a href="https://smartprogram.baidu.com/docs/develop/api/media_backgroundaudiomanager/" target="_blank" rel="noopener">swan.getBackgroundAudioManager</a> 【根据返回 string 调用录好的 mp3 音频】</li>
+<li>用语音合成接口 <a href="https://smartprogram.baidu.com/docs/develop/api/ai_audio/#swan-ai-textToAudio/" target="_blank" rel="noopener">swan.ai.textToAudio</a> 来实现语音播放（可能过于繁琐）</li>
+</ul>
+</li>
+<li>长连接 <a href="https://smartprogram.baidu.com/docs/develop/api/net_websocket/" target="_blank" rel="noopener">swan.connectSocket</a></li>
+<li>地图 api <a href="https://smartprogram.baidu.com/docs/develop/api/location_map/" target="_blank" rel="noopener">swan.createMapContext</a> 【注：该组件没有写如何控制内容元素，没有绘制道路】</li>
+<li>地图组件（真） <a href="https://smartprogram.baidu.com/docs/develop/component/map/#map/" target="_blank" rel="noopener">map</a></li>
+<li>扫码 <a href="https://smartprogram.baidu.com/docs/develop/api/device_scan/" target="_blank" rel="noopener">swan.scanCode</a></li>
+</ul>
+<h2 id="采坑回顾"><a href="#采坑回顾" class="headerlink" title="采坑回顾"></a>采坑回顾</h2><h3 id="swan"><a href="#swan" class="headerlink" title=".swan"></a><code>.swan</code></h3><h4 id="自定义顶部导航栏"><a href="#自定义顶部导航栏" class="headerlink" title="自定义顶部导航栏"></a>自定义顶部导航栏</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- app.json</span><br><span class="line">  &quot;window&quot;: &#123;</span><br><span class="line">        &quot;navigationStyle&quot;:&quot;custom&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>将自定义导航栏组成为一个组件 <code>navBar</code>。<br><code>注</code>： 此处问题，由于自定义导航栏会随小程序页面上下弹性抖动，所以需要将个页面弹性抖动关闭，如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 个页面.json</span><br><span class="line">&#123;</span><br><span class="line">     &quot;disableScroll&quot;:true,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="cover-view"><a href="#cover-view" class="headerlink" title="cover-view"></a>cover-view</h4><ol>
+<li>使用<code>xxx:last-child:{margin-bootom:xxxrpx}</code>真机(iPhone6s)不显示，编辑器显示无问题。</li>
+</ol>
+
       
 
       
@@ -213,7 +239,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">小程序 百度小程序</a>
         		</li>
       		
 		</ul>
@@ -269,7 +295,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://myblog.ink/2019/08/21/测试我的新博客/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://myblog.ink/2019/08/26/一个叫车小程序的研究/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -283,15 +309,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/23/计划排表/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/09/06/websocket学习总结/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          计划排表
+          WebSocket学习总结
         
       </div>
     </a>
   
+  
+    <a href="/2019/08/23/计划排表/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">计划排表</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

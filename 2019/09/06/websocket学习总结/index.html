@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://myblog.ink">
-  <title>测试我的新博客 | Qrn博客</title>
+  <title>WebSocket学习总结 | Qrn博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="大家好这是新的博客测试">
-<meta name="keywords" content="测试">
+  <meta name="description" content="“WebSocket 是 HTML5 新增的协议，它的目的是在浏览器和服务器之间建立一个不受限的双向通信的通道，比如说，服务器可以在任意时刻发送消息给浏览器。” WebSocket 协议“WebSocket 并不是全新的协议，而是利用了 HTTP 协议来建立连接。我们来看看 WebSocket 连接是如何创建的。” 123456789-请求头GET ws://localhost:3000/ws/c">
+<meta name="keywords" content="学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试我的新博客">
-<meta property="og:url" content="http://myblog.ink/2019/08/21/测试我的新博客/index.html">
+<meta property="og:title" content="WebSocket学习总结">
+<meta property="og:url" content="http://myblog.ink/2019/09/06/websocket学习总结/index.html">
 <meta property="og:site_name" content="Qrn博客">
-<meta property="og:description" content="大家好这是新的博客测试">
+<meta property="og:description" content="“WebSocket 是 HTML5 新增的协议，它的目的是在浏览器和服务器之间建立一个不受限的双向通信的通道，比如说，服务器可以在任意时刻发送消息给浏览器。” WebSocket 协议“WebSocket 并不是全新的协议，而是利用了 HTTP 协议来建立连接。我们来看看 WebSocket 连接是如何创建的。” 123456789-请求头GET ws://localhost:3000/ws/c">
 <meta property="og:locale" content="cn">
-<meta property="og:updated_time" content="2019-08-23T07:07:58.686Z">
+<meta property="og:updated_time" content="2019-09-06T07:57:45.766Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="测试我的新博客">
-<meta name="twitter:description" content="大家好这是新的博客测试">
+<meta name="twitter:title" content="WebSocket学习总结">
+<meta name="twitter:description" content="“WebSocket 是 HTML5 新增的协议，它的目的是在浏览器和服务器之间建立一个不受限的双向通信的通道，比如说，服务器可以在任意时刻发送消息给浏览器。” WebSocket 协议“WebSocket 并不是全新的协议，而是利用了 HTTP 协议来建立连接。我们来看看 WebSocket 连接是如何创建的。” 123456789-请求头GET ws://localhost:3000/ws/c">
   
     <link rel="alternative" href="/atom.xml" title="Qrn博客" type="application/atom+xml">
   
@@ -159,27 +159,46 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-测试我的新博客" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-websocket学习总结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      测试我的新博客
+      WebSocket学习总结
     </h1>
   
 
         
-        <a href="/2019/08/21/测试我的新博客/" class="archive-article-date">
-  	<time datetime="2019-08-21T06:17:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
+        <a href="/2019/09/06/websocket学习总结/" class="archive-article-date">
+  	<time datetime="2019-09-06T03:15:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="大家好这是新的博客测试"><a href="#大家好这是新的博客测试" class="headerlink" title="大家好这是新的博客测试"></a>大家好这是新的博客测试</h1>
+        <p><em>“WebSocket 是 HTML5 新增的协议，它的目的是在浏览器和服务器之间建立一个不受限的双向通信的通道，比如说，服务器可以在任意时刻发送消息给浏览器。”</em></p>
+<h2 id="WebSocket-协议"><a href="#WebSocket-协议" class="headerlink" title="WebSocket 协议"></a>WebSocket 协议</h2><p><em>“WebSocket 并不是全新的协议，而是利用了 HTTP 协议来建立连接。我们来看看 WebSocket 连接是如何创建的。”</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-请求头</span><br><span class="line"></span><br><span class="line">GET ws://localhost:3000/ws/chat HTTP/1.1</span><br><span class="line">Host: localhost</span><br><span class="line">Upgrade: websocket</span><br><span class="line">Connection: Upgrade</span><br><span class="line">Origin: http://localhost:3000</span><br><span class="line">Sec-WebSocket-Key: client-random-string</span><br><span class="line">Sec-WebSocket-Version: 13</span><br></pre></td></tr></table></figure>
+
+<p>该请求和普通的 HTTP 请求有几点不同：</p>
+<ol>
+<li>GET 请求的地址不是类似/path/，而是以 ws://开头的地址；</li>
+<li>请求头 Upgrade: websocket 和 Connection: Upgrade 表示这个连接将要被转换为 WebSocket 连接；</li>
+<li>Sec-WebSocket-Key 是用于标识这个连接，并非用于加密数据；</li>
+<li>Sec-WebSocket-Version 指定了 WebSocket 的协议版本。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- 响应头</span><br><span class="line"></span><br><span class="line">HTTP/1.1 101 Switching Protocols</span><br><span class="line">Upgrade: websocket</span><br><span class="line">Connection: Upgrade</span><br><span class="line">Sec-WebSocket-Accept: server-random-string</span><br></pre></td></tr></table></figure>
+
+<p>该响应代码<code>101</code>表示本次连接的 HTTP 协议即将被更改，更改后的协议就是<code>Upgrade: websocket</code>指定的 WebSocket 协议。</p>
+<p>现在，一个 WebSocket 连接就建立成功，浏览器和服务器就可以随时主动发送消息给对方。消息有两种，一种是<code>文本</code>，一种是<code>二进制数据</code>。</p>
+<p><em>“为什么 WebSocket 连接可以实现全双工通信而 HTTP 连接不行呢？实际上 HTTP 协议是建立在 TCP 协议之上的，TCP 协议本身就实现了全双工通信，但是 HTTP 协议的请求－应答机制限制了全双工通信。WebSocket 连接建立以后，其实只是简单规定了一下：接下来，咱们通信就不使用 HTTP 协议了，直接互相发数据吧。”</em></p>
+<blockquote>
+<p><a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1103303693824096" target="_blank" rel="noopener">廖雪峰-WebSocket</a></p>
+</blockquote>
+
       
 
       
@@ -213,7 +232,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
         		</li>
       		
 		</ul>
@@ -269,7 +288,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://myblog.ink/2019/08/21/测试我的新博客/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://myblog.ink/2019/09/06/websocket学习总结/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -283,15 +302,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/23/计划排表/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          计划排表
-        
-      </div>
-    </a>
   
+    <a href="/2019/08/26/一个叫车小程序的研究/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一个叫车小程序的研究(百度智能小程序) 01</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

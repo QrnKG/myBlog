@@ -160,6 +160,197 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-websocket学习总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/06/websocket学习总结/">WebSocket学习总结</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/06/websocket学习总结/" class="archive-article-date">
+  	<time datetime="2019-09-06T03:15:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>“WebSocket 是 HTML5 新增的协议，它的目的是在浏览器和服务器之间建立一个不受限的双向通信的通道，比如说，服务器可以在任意时刻发送消息给浏览器。”</em></p>
+<h2 id="WebSocket-协议"><a href="#WebSocket-协议" class="headerlink" title="WebSocket 协议"></a>WebSocket 协议</h2><p><em>“WebSocket 并不是全新的协议，而是利用了 HTTP 协议来建立连接。我们来看看 WebSocket 连接是如何创建的。”</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-请求头</span><br><span class="line"></span><br><span class="line">GET ws://localhost:3000/ws/chat HTTP/1.1</span><br><span class="line">Host: localhost</span><br><span class="line">Upgrade: websocket</span><br><span class="line">Connection: Upgrade</span><br><span class="line">Origin: http://localhost:3000</span><br><span class="line">Sec-WebSocket-Key: client-random-string</span><br><span class="line">Sec-WebSocket-Version: 13</span><br></pre></td></tr></table></figure>
+
+<p>该请求和普通的 HTTP 请求有几点不同：</p>
+<ol>
+<li>GET 请求的地址不是类似/path/，而是以 ws://开头的地址；</li>
+<li>请求头 Upgrade: websocket 和 Connection: Upgrade 表示这个连接将要被转换为 WebSocket 连接；</li>
+<li>Sec-WebSocket-Key 是用于标识这个连接，并非用于加密数据；</li>
+<li>Sec-WebSocket-Version 指定了 WebSocket 的协议版本。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- 响应头</span><br><span class="line"></span><br><span class="line">HTTP/1.1 101 Switching Protocols</span><br><span class="line">Upgrade: websocket</span><br><span class="line">Connection: Upgrade</span><br><span class="line">Sec-WebSocket-Accept: server-random-string</span><br></pre></td></tr></table></figure>
+
+<p>该响应代码<code>101</code>表示本次连接的 HTTP 协议即将被更改，更改后的协议就是<code>Upgrade: websocket</code>指定的 WebSocket 协议。</p>
+<p>现在，一个 WebSocket 连接就建立成功，浏览器和服务器就可以随时主动发送消息给对方。消息有两种，一种是<code>文本</code>，一种是<code>二进制数据</code>。</p>
+<p><em>“为什么 WebSocket 连接可以实现全双工通信而 HTTP 连接不行呢？实际上 HTTP 协议是建立在 TCP 协议之上的，TCP 协议本身就实现了全双工通信，但是 HTTP 协议的请求－应答机制限制了全双工通信。WebSocket 连接建立以后，其实只是简单规定了一下：接下来，咱们通信就不使用 HTTP 协议了，直接互相发数据吧。”</em></p>
+<blockquote>
+<p><a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1103303693824096" target="_blank" rel="noopener">廖雪峰-WebSocket</a></p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/06/websocket学习总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-一个叫车小程序的研究" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/26/一个叫车小程序的研究/">一个叫车小程序的研究(百度智能小程序) 01</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/26/一个叫车小程序的研究/" class="archive-article-date">
+  	<time datetime="2019-08-26T06:42:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="百度智能小程序来设计一款叫车软件"><a href="#百度智能小程序来设计一款叫车软件" class="headerlink" title="百度智能小程序来设计一款叫车软件"></a>百度智能小程序来设计一款叫车软件</h1><p><strong><em>关键点 ：长连接(WebSocket) 语音 地图标点 道路绘制 自定义车标 周围车辆</em></strong></p>
+<blockquote>
+<p>编译工具 3.52.2<br>调试基础库 3.100.7</p>
+</blockquote>
+<h2 id="基本所需接口（暂定）"><a href="#基本所需接口（暂定）" class="headerlink" title="基本所需接口（暂定）"></a>基本所需接口（暂定）</h2><blockquote>
+<p>参考 《智能小程序》 文档 <a href="https://smartprogram.baidu.com/docs/introduction/enter_application/" target="_blank" rel="noopener">地址</a></p>
+</blockquote>
+<ul>
+<li>语音识别 <a href="https://smartprogram.baidu.com/docs/develop/api/ai_voice/#swan-ai-getVoiceRecognizer/" target="_blank" rel="noopener">swan.ai.getVoiceRecognizer</a> 【返回值：string】<ul>
+<li>用音频组件 <a href="https://smartprogram.baidu.com/docs/develop/api/media_createinneraudiocontext/" target="_blank" rel="noopener">swan.createInnerAudioContext</a> 或者 背景音源管理播放 <a href="https://smartprogram.baidu.com/docs/develop/api/media_backgroundaudiomanager/" target="_blank" rel="noopener">swan.getBackgroundAudioManager</a> 【根据返回 string 调用录好的 mp3 音频】</li>
+<li>用语音合成接口 <a href="https://smartprogram.baidu.com/docs/develop/api/ai_audio/#swan-ai-textToAudio/" target="_blank" rel="noopener">swan.ai.textToAudio</a> 来实现语音播放（可能过于繁琐）</li>
+</ul>
+</li>
+<li>长连接 <a href="https://smartprogram.baidu.com/docs/develop/api/net_websocket/" target="_blank" rel="noopener">swan.connectSocket</a></li>
+<li>地图 api <a href="https://smartprogram.baidu.com/docs/develop/api/location_map/" target="_blank" rel="noopener">swan.createMapContext</a> 【注：该组件没有写如何控制内容元素，没有绘制道路】</li>
+<li>地图组件（真） <a href="https://smartprogram.baidu.com/docs/develop/component/map/#map/" target="_blank" rel="noopener">map</a></li>
+<li>扫码 <a href="https://smartprogram.baidu.com/docs/develop/api/device_scan/" target="_blank" rel="noopener">swan.scanCode</a></li>
+</ul>
+<h2 id="采坑回顾"><a href="#采坑回顾" class="headerlink" title="采坑回顾"></a>采坑回顾</h2><h3 id="swan"><a href="#swan" class="headerlink" title=".swan"></a><code>.swan</code></h3><h4 id="自定义顶部导航栏"><a href="#自定义顶部导航栏" class="headerlink" title="自定义顶部导航栏"></a>自定义顶部导航栏</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- app.json</span><br><span class="line">  &quot;window&quot;: &#123;</span><br><span class="line">        &quot;navigationStyle&quot;:&quot;custom&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>将自定义导航栏组成为一个组件 <code>navBar</code>。<br><code>注</code>： 此处问题，由于自定义导航栏会随小程序页面上下弹性抖动，所以需要将个页面弹性抖动关闭，如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 个页面.json</span><br><span class="line">&#123;</span><br><span class="line">     &quot;disableScroll&quot;:true,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="cover-view"><a href="#cover-view" class="headerlink" title="cover-view"></a>cover-view</h4><ol>
+<li>使用<code>xxx:last-child:{margin-bootom:xxxrpx}</code>真机(iPhone6s)不显示，编辑器显示无问题。</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">小程序 百度小程序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/26/一个叫车小程序的研究/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-计划排表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -397,6 +588,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">小程序 百度小程序</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">测试</a>
